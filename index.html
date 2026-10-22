@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="fr" class="h-full bg-slate-50">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>IdeaBox</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="min-h-full text-slate-900">
+    <section id="login-view" class="min-h-screen grid place-items-center p-5 hidden">
+      <form id="login-form" class="panel login-card" autocomplete="on">
+        <header class="login-heading">
+          <p class="eyebrow login-eyebrow">Espace personnel</p>
+          <h1>IdeaBox</h1>
+          <p>Connectez-vous pour retrouver vos idées et vos projets.</p>
+        </header>
+        <div class="login-fields">
+          <label class="login-field">
+            <span>Adresse e-mail</span>
+            <input id="login-email" type="email" autocomplete="username" inputmode="email" placeholder="vous@exemple.com" required />
+          </label>
+          <label class="login-field">
+            <span>Mot de passe</span>
+            <input id="login-password" type="password" autocomplete="current-password" placeholder="Votre mot de passe" required />
+          </label>
+        </div>
+        <p id="login-error" class="error hidden" role="alert"></p>
+        <button class="primary login-submit" type="submit">Se connecter</button>
+      </form>
+    </section>
+
+    <div id="app-view" class="hidden min-h-screen">
+      <header class="sticky top-0 z-20 border-b border-slate-200 bg-white/95 backdrop-blur">
+        <div class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3">
+          <button class="text-xl font-black text-indigo-700" data-view="ideas">IdeaBox</button>
+          <nav class="flex items-center gap-1 overflow-x-auto" aria-label="Navigation principale">
+            <button class="nav-button" data-view="ideas">Idées</button>
+            <button class="nav-button" data-view="archives">Archives</button>
+            <button class="nav-button" data-view="projects">Projets</button>
+            <button id="logout-button" class="nav-button text-red-700">Déconnexion</button>
+          </nav>
+        </div>
+      </header>
+      <main id="main-content" class="mx-auto max-w-6xl p-4 sm:p-6" aria-live="polite"></main>
+      <div id="toast" class="toast hidden" role="status"></div>
+    </div>
+
+    <script src="config.js"></script>
+    <script src="utils.js"></script>
+    <script src="analysis.js"></script>
+    <script src="ideas.js"></script>
+    <script src="projects.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
