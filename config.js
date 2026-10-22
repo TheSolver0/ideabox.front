@@ -1,4 +1,5 @@
-const API_URL = String(window.IDEABOX_CONFIG?.apiUrl || "http://localhost:3001").replace(/\/$/, "");
+const API_URL = String(window.IDEABOX_CONFIG?.apiUrl || "https://ideabox-8p0v.onrender.com").replace(/\/$/, "");
+// const API_URL = String(window.IDEABOX_CONFIG?.apiUrl || "http://localhost:3001").replace(/\/$/, "");
 let sessionAccessToken = null;
 
 async function apiFetch(path, options = {}) {
